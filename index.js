@@ -83,8 +83,12 @@ class App {
         });
 
         if (screen == "home") {
+            this.tg.SecondaryButton.show();
+            this.tg.MainButton.show();
             this.tg.BackButton.hide();
         } else {
+            this.tg.SecondaryButton.hide();
+            this.tg.MainButton.hide();
             this.tg.BackButton.show();
         }
     }
@@ -92,6 +96,8 @@ class App {
     menuClicked() {
         if (!app.menuActive) {
             app.tg.BackButton.show();
+            app.tg.SecondaryButton.hide();
+            app.tg.MainButton.hide();
             app.menuActive = true;
             $("#screen_" + app.activeScreen).fadeOut(function() {
                 $("#screen_menu").fadeIn();
@@ -99,6 +105,8 @@ class App {
         } else {
             if (app.activeScreen == "home") {
                 app.tg.BackButton.hide();
+                app.tg.SecondaryButton.show();
+                app.tg.MainButton.show();
             }
             window.history.go(-1);
             $("#screen_menu").fadeOut(function() {
