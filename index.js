@@ -93,6 +93,7 @@ class App {
 
     menuClicked() {
         if (!app.menuActive) {
+            app.tg.BackButton.show();
             app.menuActive = true;
             $("#screen_" + app.activeScreen).fadeOut(function() {
                 $("#screen_menu").fadeIn();
