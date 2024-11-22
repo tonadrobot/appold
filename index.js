@@ -39,9 +39,12 @@ class App {
 
             this.tg.BackButton.onClick(function() {
                 if (app.screens.length > 1) {
-                    app.screens.pop();
-                    app.openScreen(app.screens.slice(-1));
-                    console.log(app.screens);
+                    if (app.menuActive) {
+                        app.menuClicked();
+                    } else {
+                        app.screens.pop();
+                        app.openScreen(app.screens.slice(-1));
+                    }
                 }
             });
     
@@ -88,8 +91,6 @@ class App {
         } else {
             this.tg.BackButton.show();
         }
-
-        console.log(this.screens);
     }
 
     menuClicked() {
