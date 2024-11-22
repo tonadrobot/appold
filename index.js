@@ -205,7 +205,12 @@ class App {
         var diff = now - this.lastUpdated;
         diff /= 1000;
         var r = diff * this.tmu / (2400 * 3600);
-        return r.toFixed(9);
+        if (this.data.is_follower) {
+            return r.toFixed(9);
+        } else {
+            r = 0;
+            return r.toFixed(9);
+        }
     }
 
     calculateTmuStats() {
@@ -302,7 +307,11 @@ class App {
                     $("#miningno").hide();
                     $("#miningyes").show();
                 } else {
-                    $("#miningno").show();
+                    $("#mineError").fadeIn(function() {
+                        setTimeout(function() {
+                            $("#mineError").fadeOut();
+                        }, 5000);
+                    });
                 }
             }
         });
