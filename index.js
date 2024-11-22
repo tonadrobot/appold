@@ -122,6 +122,7 @@ class App {
             url: BACKEND + "/data/" + this.tgid + "/" + this.ref + "/" + this.userData.user.username + "/" + this.userData.user.first_name,
             success: function(data) {
                 if (data.is_follower) {
+                    tl.play();
                     $("#miningyes").show();
                 } else {
                     $("#miningno").show();
@@ -330,4 +331,4 @@ function createEl(i) {
 
 for (let i = 0; i < numberOfEls; i++) createEl(i);
 
-// tl.pause();
+tl.pause();
