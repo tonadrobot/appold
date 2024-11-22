@@ -38,13 +38,11 @@ class App {
             });
 
             this.tg.BackButton.onClick(function() {
-                if (app.screens.length > 1) {
-                    if (app.menuActive) {
-                        app.menuClicked();
-                    } else {
-                        app.screens.pop();
-                        app.openScreen(app.screens.slice(-1));
-                    }
+                if (app.menuActive) {
+                    app.menuClicked();
+                } else if (app.screens.length > 1) {
+                    app.screens.pop();
+                    app.openScreen(app.screens.slice(-1));
                 }
             });
     
@@ -99,6 +97,9 @@ class App {
                 $("#screen_menu").fadeIn();
             });
         } else {
+            if (app.activeScreen == "home") {
+                app.tg.BackButton.hide();
+            }
             window.history.go(-1);
             $("#screen_menu").fadeOut(function() {
                 $("#screen_" + app.activeScreen).fadeIn();
