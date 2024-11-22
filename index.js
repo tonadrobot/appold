@@ -41,6 +41,7 @@ class App {
                 if (app.screens.length > 1) {
                     app.screens.pop();
                     app.openScreen(app.screens.slice(-1));
+                    console.log(app.screens);
                 }
             });
     
@@ -69,6 +70,8 @@ class App {
         } catch (e) {
             $("#first_name").html("Dev");
         }
+
+        this.openScreen("new");
     }
 
     openScreen(screen) {
@@ -85,16 +88,21 @@ class App {
         } else {
             this.tg.BackButton.show();
         }
+
+        console.log(this.screens);
     }
 
     menuClicked() {
         if (!app.menuActive) {
-            app.openScreen("menu");
             app.menuActive = true;
+            $("#screen_" + app.activeScreen).fadeOut(function() {
+                $("#screen_menu").fadeIn();
+            });
         } else {
             window.history.go(-1);
-            app.screens.pop();
-            app.openScreen(app.screens.slice(-1));
+            $("#screen_menu").fadeOut(function() {
+                $("#screen_" + app.activeScreen).fadeIn();
+            });
             app.menuActive = false;
         }
     }
