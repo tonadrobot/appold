@@ -292,6 +292,10 @@ class App {
         });
     }
 
+    startMining() {
+        
+    }
+
 }
 
 const wrapperEl = document.querySelector('.wrapper');
