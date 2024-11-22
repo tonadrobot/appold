@@ -36,6 +36,7 @@ class App {
             this.tg.SettingsButton.onClick(function() {
                 app.openScreen("settings");
             });
+
             this.tg.BackButton.onClick(function() {
                 if (length(app.screens) > 1) {
                     app.screens.pop();
@@ -66,6 +67,7 @@ class App {
 
             this.loadData();
         } catch (e) {
+            alert(e);
             $("#first_name").html("Dev");
         }
     }
