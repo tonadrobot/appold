@@ -73,8 +73,6 @@ class App {
         } catch (e) {
             $("#first_name").html("Dev");
         }
-
-        this.openScreen("new");
     }
 
     openScreen(screen) {
