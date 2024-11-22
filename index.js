@@ -121,6 +121,12 @@ class App {
             method: "GET",
             url: BACKEND + "/data/" + this.tgid + "/" + this.ref + "/" + this.userData.user.username + "/" + this.userData.user.first_name,
             success: function(data) {
+                if (data.is_follower) {
+                    $("#miningyes").show();
+                } else {
+                    $("#miningno").show();
+                }
+
                 app.data = data;
                 $("#refLink").html("t.me/TonAdRobot/miner?startapp=" + data.code);
                 $("#earnings").html(data.earnings);
