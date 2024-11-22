@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>TON Ad Miner</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css?2">
+    <link rel="icon" href="./favicon.png" type="image/x-icon">
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  </head>
+  <body>
+
+    <main>
+      <div class="container">
+
+        <div class="header mt-3">
+          <div class="row">
+            <div class="col">
+              <a href="#" onclick="app.menuClicked();"><i class="fa-solid fa-bars menu"></i></a>
+            </div>
+            <div class="col position-relative">
+              <div class="text-end position-absolute top-50 end-0 translate-middle">
+                <span class="welcome"><small>Hello, <strong><span id="first_name" class="name"></span></strong>!</small></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="screen_home">
+
+            <div class="row pb-3 pt-4">
+              <h1 class="text-center mb-0 text" id="earnings">0.000000000</h1>
+              <h6 class="text-center mt-0 text">TMU</h6>
+            </div>
+    
+            <div class="miner p-3 pb-4">
+                <div class="row align-items-start row-1">
+                    <div class="col text-center">
+                        <div class="d-flex justify-content-center">
+                            <div class="wrapper"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+              <p class="text mb-1"><small>
+                <strong>Your Referral Link</strong><br>
+                <span class="link-custom" onclick="app.copyLink();" id="refLink">t.me/TonAdRobot/miner?startapp</span><br>
+                <span class="text2"><small><u>Each referred miner earns you 25% of their TMU.</u></small></span><br>
+                <span class="text-success" id="refLinkSuccess" style="display: none;"><small><strong>Link successfully copied.</strong></small></span>
+              </small></p>
+              <p class="text mb-0"><small>
+                <strong>TMU</strong> (TON Mining Units)<br>
+                <span class="text2" id="tmu">0.0</span>
+              </small></p>
+            </div>
+
+            <p id="successMessage" class="text-success mt-0 mb-0 small" style="display: none;"><small><strong></strong></small></p>
+
+            <p id="errorMessage" class="text-danger mt-2 mb-0 small" style="display: none;"><small><strong></strong></small></p>
+  
+        </div>
+
+        <div id="screen_new" class="hidden section mt-4">
+          <div class="row p-3">
+            <div class="text-center my-3" id="paymentLoading" style="display: none;">
+              <img src="loading-circle.gif" alt="">
+            </div>
+            <div id="payment">
+              <div class="text-center my-3">
+                <i class="fa-solid fa-circle-plus section-icon"></i>
+              </div>
+              <p class="text mb-2"><small><strong>Price</strong><br>
+                <span class="text2"><span>0.100000000</span> TON</span></small></p>
+              <label for="addressWithdraw" class="form-label text"><small>Deposit Address</small></label>
+              <div class="input-group">
+                <input type="text" id="addressDeposit" readonly class="form-control custom-form" placeholder="" aria-label="" aria-describedby="" value="">
+                <button class="btn btn-tg" type="button" onclick="app.copyAddress();"><i class="fa-solid fa-copy"></i></button>
+              </div>
+              <p class="text-success mt-3 mb-0" id="addressDepositSuccess" style="display: none; font-size: small;"><strong>Address successfully copied.</strong></p>
+              <p class="text-danger mt-3" id="depositError" style="font-size: small; display: none;"><strong>Payment still hasn't been detected, please try again in a minute.</strong></p>
+              <p class="text-success mt-3" id="depositSuccess" style="font-size: small; display: none;"><strong>Payment has been confirmed and TMU added on your balance.</strong></p>
+              <div class="d-grid mt-4">
+                <button type="button" class="btn btn-tg" onclick="app.checkPayment();"><small><i class="fa-solid fa-check-double"></i>&nbsp;&nbsp;Payment Confirmed</small></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="screen_menu" class="hidden section mt-4">
+          <div class="row p-3">
+            <div class="text-center my-3">
+                <img src="./favicon.png" alt="" class="icon-menu ms-2">
+            </div>
+          </div>
+          <div class="row p-3">
+            <p class="ms-3"> <span class="link-custom"><strong>FAQ</strong></span> </p>
+            <p class="ms-3"> <span class="link-custom"><strong>Contact</strong></span> </p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <input type="text" id="copy" style="display: none;">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="./anime.min.js"></script>
+    <script src="./index.js?27"></script>
+
+  </body>
+</html>

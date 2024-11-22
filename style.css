@@ -1,0 +1,152 @@
+:root {
+    --tg-theme-bg-color: #17212B;
+    --tg-theme-text-color: #FFF;
+    --tg-theme-secondary-bg-color: #232E3C;
+    --tg-theme-hint-color: #708498;
+    --tg-theme-button-color: #5288C1;
+    --tg-theme-button-text-color: #FFF;
+    --tg-theme-link-color: #5288C1;
+}
+
+body {
+    background-color: var(--tg-theme-bg-color);
+}
+
+.header {
+    background-color: var(--tg-theme-secondary-bg-color);
+    border-radius: 8px;
+}
+
+.miner {
+    background-color: var(--tg-theme-secondary-bg-color);
+    border-radius: 8px;
+}
+
+.miner > img {
+    width: 70%;
+    margin-left: 15%;
+}
+
+.text {
+    color: var(--tg-theme-text-color);
+}
+
+.text2 {
+    color: var(--tg-theme-hint-color);
+}
+
+.welcome {
+    color: var(--tg-theme-hint-color);
+}
+
+.icon {
+    max-width: 30%;
+}
+
+.icon-menu {
+    max-width: 20%;
+}
+
+.name {
+    color: var(--tg-theme-button-color);
+}
+
+.btn-tg {
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+}
+
+.btn-tg:hover {
+    background-color: #4778AB !important;
+    color: var(--tg-theme-button-text-color);
+}
+
+.btn-tg:active {
+    background-color: #4778AB !important;
+    color: var(--tg-theme-button-text-color) !important;
+}
+
+btn-tg:focus {
+    background-color: #4778AB !important;
+    color: var(--tg-theme-button-text-color) !important;
+}
+
+.btn-tg:focus-visible {
+    background-color: #4778AB !important;
+    color: var(--tg-theme-button-text-color);
+}
+
+.btn-tg:visited {
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+}
+
+.hidden {
+    display: none;
+}
+
+.section {
+    background-color: var(--tg-theme-secondary-bg-color);
+    border-radius: 8px;   
+}
+
+.section-icon {
+    color: var(--tg-theme-hint-color);
+    font-size: 3em;
+}
+
+.custom-form {
+    font-size: small;
+}
+
+.link-custom {
+    color: var(--tg-theme-button-color);
+}
+
+.progress-custom {
+    /* margin-right: calc(-.5* var(--bs-gutter-x));
+    margin-left: calc(-.5* var(--bs-gutter-x)); */
+}
+
+.progress-custom > .progress-bar {
+    background-color: var(--tg-theme-button-color);
+}
+
+.menu {
+    font-size: 2em;
+    color: var(--tg-theme-button-color);
+    margin: 0.3em 0.5em;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1px;
+    height: 41vh;
+    margin-top: -9vh;
+}
+
+.el {
+    position: absolute;
+    opacity: 1;
+    width: 2px;
+    height: 10vh;
+    max-height: 110px;
+    /* margin-top: -60px; */
+    transform-origin: 50% 100%;
+    background: white;
+}
+
+.red {
+    background-color: #DC4040;
+}
+
+.green {
+    background-color: #18A01D;
+}
+
+.blue {
+    background-color: var(--tg-theme-button-color);
+}
