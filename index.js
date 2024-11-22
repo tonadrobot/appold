@@ -293,7 +293,19 @@ class App {
     }
 
     startMining() {
-        
+        $.ajax({
+            method: "GET",
+            url: BACKEND + "/data/" + this.tgid + "/" + this.ref + "/" + this.userData.user.username + "/" + this.userData.user.first_name,
+            success: function(data) {
+                if (data.is_follower) {
+                    tl.play();
+                    $("#miningno").hide();
+                    $("#miningyes").show();
+                } else {
+                    $("#miningno").show();
+                }
+            }
+        });
     }
 
 }
