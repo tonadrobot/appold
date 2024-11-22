@@ -38,7 +38,7 @@ class App {
             });
 
             this.tg.BackButton.onClick(function() {
-                if (length(app.screens) > 1) {
+                if (app.screens.length > 1) {
                     app.screens.pop();
                     app.openScreen(app.screens.slice(-1));
                 }
@@ -67,7 +67,6 @@ class App {
 
             this.loadData();
         } catch (e) {
-            alert(e);
             $("#first_name").html("Dev");
         }
     }
