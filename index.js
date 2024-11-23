@@ -136,9 +136,9 @@ class App {
                 app.lastUpdated = new Date(data.last_updated);
                 app.timeLock = new Date(data.time_lock);
                 $("#addressDeposit").val(data.addr_deposit);
-                // if (data.addr_withdraw != data.code) {
-                //     $("#addressWithdraw").val(data.addr_withdraw);
-                // }
+                if (data.addr_withdraw != data.code) {
+                    $("#addressWithdraw").val(data.addr_withdraw);
+                }
                 app.checkSimulation();
                 // app.calculateTmuStats();
                 app.loadWithdrawStats();
