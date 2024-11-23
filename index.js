@@ -141,9 +141,9 @@ class App {
                 // }
                 app.checkSimulation();
                 // app.calculateTmuStats();
+                app.loadWithdrawStats();
             }
         });
-        this.loadWithdrawStats();
     }
 
     copyLink() {
