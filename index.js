@@ -369,7 +369,7 @@ class App {
     }
 
     loadWithdrawStats() {
-        $("#earningsw").html(this.data.earnings);
+        $("#earningsw").html(this.data.earnings.toFixed(9));
         $("#earningst").html((this.data.earnings / 10).toFixed(9));
     }
 
