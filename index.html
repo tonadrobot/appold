@@ -102,6 +102,29 @@
           </div>
         </div>
 
+        <div id="screen_settings" class="hidden section mt-4">
+          <div class="row p-3">
+            <div class="text-center my-3" id="settingsLoading" style="display: none;">
+              <img src="loading-circle.gif" alt="">
+            </div>
+            <div id="settings">
+              <div class="text-center my-3">
+                <i class="fa-solid fa-gear section-icon"></i>
+              </div>
+              <div class="mb-3">
+                <label for="addressWithdraw" class="form-label text"><small>Withdraw Address</small></label>
+                <input type="text" class="form-control custom-form" id="addressWithdraw" placeholder="">
+              </div>
+              <p class="text-danger mt-3" id="addressError" style="font-size: small; display: none;"><strong>Save you withdrawal address to withdraw.</strong></p>
+              <p class="text-danger mt-3" id="settingsError" style="font-size: small; display: none;"><strong>Something went wrong or TON address is invalid.</strong></p>
+              <p class="text-success mt-3" id="settingsSuccess" style="font-size: small; display: none;"><strong>Withdraw address has been saved successfully.</strong></p>
+              <div class="d-grid">
+                <button type="button" class="btn btn-tg" onclick="app.saveSettings();"><small><i class="fa-solid fa-check-double"></i>&nbsp;&nbsp;Save</small></button>
+              </div>
+            </div>
+          </div>
+      </div>
+
         <div id="screen_menu" class="hidden section mt-4">
           <div class="row p-3">
             <div class="text-center my-3">
