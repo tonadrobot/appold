@@ -424,6 +424,7 @@ class App {
                 }, 5000);
             });
         }
+        this.openScreen("home");
     }
 
 }
