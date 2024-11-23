@@ -318,6 +318,84 @@ class App {
         });
     }
 
+    saveSettings() {
+        var av = $("#addressWithdraw").val();
+
+        $("#settings").fadeOut(function() {
+            $("#settingsLoading").fadeIn();
+            $.ajax({
+                method: "POST",
+                url: BACKEND + "/save/" + app.tgid,
+                data: {
+                    address_withdraw: av,
+                },
+                success: function(data) {
+                    $("#settingsLoading").fadeOut(function() {
+                        $("#settings").fadeIn();
+                        if (data.success) {
+                            $("#settingsSuccess").fadeIn(function() {
+                                setTimeout(function() {
+                                    $("#settingsSuccess").fadeOut();
+                                }, 5000);
+                            });
+                            clearTimeout(app.tmout);
+                            app.loadData();
+                        } else {
+                            $("#settingsError").fadeIn(function() {
+                                setTimeout(function() {
+                                    $("#settingsError").fadeOut();
+                                }, 5000);
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    }
+
+    withdraw() {
+        var r = this.getRewards();
+        if (r > 0.001) {
+            if (this.data.addr_withdraw != this.data.code) {
+                this.tg.showConfirm("Are you sure you want to withdraw your rewards?", function(sure) {
+                    if (sure) {
+                        $.ajax({
+                            method: "POST",
+                            url: BACKEND + "/withdraw/" + app.tgid,
+                            success: function(data) {
+                                clearTimeout(app.tmout);
+                                app.loadData();
+                            }
+                        });
+    
+                        $("#successMessage").html("<small><strong>Withdraw done successfully.</strong></small>");
+    
+                        $("#successMessage").fadeIn(function() {
+                            setTimeout(function() {
+                                $("#successMessage").fadeOut();
+                            }, 5000);
+                        });
+                    }
+                });
+            } else {
+                $("#addressError").fadeIn(function() {
+                    setTimeout(function() {
+                        $("#addressError").fadeOut();
+                    }, 5000);
+                });
+                this.openScreen("settings");
+            }
+        } else {
+            $("#errorMessage").html("<small><strong>Minimum withdrawal amount is 0.001 TON.</strong></small>");
+    
+            $("#errorMessage").fadeIn(function() {
+                setTimeout(function() {
+                    $("#errorMessage").fadeOut();
+                }, 5000);
+            });
+        }
+    }
+
 }
 
 const wrapperEl = document.querySelector('.wrapper');
