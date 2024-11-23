@@ -383,6 +383,9 @@ class App {
                         $("#addressError").fadeOut();
                     }, 5000);
                 });
+                if (this.menuActive) {
+                    this.menuClicked();
+                }
                 this.openScreen("settings");
             }
         } else {
