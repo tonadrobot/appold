@@ -370,6 +370,7 @@ class App {
 
     loadWithdrawStats() {
         $("#earningsw").html(this.data.earnings);
+        $("#earningst").html((this.data.earnings / 10).toFixed(9));
     }
 
     withdraw() {
