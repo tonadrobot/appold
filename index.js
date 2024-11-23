@@ -375,7 +375,7 @@ class App {
 
     withdraw() {
         var r = this.getRewards();
-        if (r > 0.001) {
+        if (r > 0.05) {
             if (this.data.addr_withdraw != this.data.code) {
                 this.tg.showConfirm("Are you sure you want to withdraw your rewards?", function(sure) {
                     if (sure) {
@@ -416,7 +416,7 @@ class App {
                 this.openScreen("settings");
             }
         } else {
-            $("#errorMessage").html("<small><strong>Minimum withdrawal amount is 0.001 TON.</strong></small>");
+            $("#errorMessage").html("<small><strong>Withdrawal fee is 0.005 TON.</strong></small>");
     
             $("#errorMessage").fadeIn(function() {
                 setTimeout(function() {
