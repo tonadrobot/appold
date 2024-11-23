@@ -384,7 +384,14 @@ class App {
                     }, 5000);
                 });
                 if (this.menuActive) {
-                    this.menuClicked();
+                    if (app.activeScreen == "home") {
+                        app.tg.BackButton.hide();
+                        app.tg.SecondaryButton.show();
+                        app.tg.MainButton.show();
+                    }
+                    window.history.go(-1);
+                    $("#screen_menu").hide();
+                    app.menuActive = false;
                 }
                 this.openScreen("settings");
             }
