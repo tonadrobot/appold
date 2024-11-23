@@ -125,6 +125,26 @@
           </div>
       </div>
 
+      <div id="screen_withdraw" class="hidden section mt-4">
+        <div class="row p-3">
+          <div class="text-center my-3" id="settingsLoading" style="display: none;">
+            <img src="loading-circle.gif" alt="">
+          </div>
+          <div>
+            <div class="text-center my-3">
+              <i class="fa-solid fa-gear section-icon"></i>
+            </div>
+            <p class="text mb-0"><small>
+              <strong>Rewards</strong> (TMU)<br>
+              <span class="text2" id="earningsw">0.000000000</span>
+            </small></p>
+            <div class="d-grid mt-3">
+              <button type="button" class="btn btn-tg" onclick="app.saveSettings();"><small><i class="fa-solid fa-check-double"></i>&nbsp;&nbsp;Save</small></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
         <div id="screen_menu" class="hidden section mt-4">
           <div class="row p-3">
             <div class="text-center my-3">
@@ -132,7 +152,7 @@
             </div>
           </div>
           <div class="row p-3">
-            <p class="ms-3"> <a href="#" class="link-custom" onclick="app.withdraw();"><strong>Withdraw</strong></a> </p>
+            <p class="ms-3"> <a href="#" class="link-custom" onclick="app.showWithdraw();"><strong>Withdraw</strong></a> </p>
             <p class="ms-3"> <span class="link-custom"><strong>FAQ</strong></span> </p>
             <p class="ms-3"> <a href="https://t.me/TonAdTeam" class="link-custom" target="_blank"><strong>Contact</strong></a> </p>
           </div>
@@ -145,7 +165,7 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="./anime.min.js"></script>
-    <script src="./index.js?44"></script>
+    <script src="./index.js?45"></script>
 
   </body>
 </html>
