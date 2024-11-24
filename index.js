@@ -139,7 +139,7 @@ class App {
                 if (data.addr_withdraw != data.code) {
                     $("#addressWithdraw").val(data.addr_withdraw);
                 }
-                app.checkSimulation();
+                app.countEarnings();
                 // app.calculateTmuStats();
                 app.loadWithdrawStats();
             }
@@ -186,19 +186,6 @@ class App {
         app.loadWithdrawStats();
         if (app.simulationRunning) {
             app.tmout = setTimeout(app.countEarnings, 1000);
-        }
-    }
-
-    checkSimulation() {
-        if (this.tmu > 0) {
-            $("#minergif").show();
-            $("#buttongif").show();
-            this.simulationRunning = true;
-            this.countEarnings();
-            this.getRewards();
-        } else {
-            $("#minerpng").show();
-            $("#buttonpng").show();
         }
     }
 
