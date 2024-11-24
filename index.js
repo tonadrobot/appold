@@ -141,7 +141,7 @@ class App {
                 }
                 app.countEarnings();
                 // app.calculateTmuStats();
-                app.loadWithdrawStats();
+                // app.loadWithdrawStats();
             }
         });
     }
