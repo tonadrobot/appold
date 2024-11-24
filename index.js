@@ -183,6 +183,7 @@ class App {
         app.calculateTmuStats();
         var earnings = app.getRewards();
         $("#earnings").html(earnings);
+        app.loadWithdrawStats();
         if (app.simulationRunning) {
             app.tmout = setTimeout(app.countEarnings, 1000);
         }
