@@ -357,8 +357,8 @@ class App {
     }
 
     loadWithdrawStats() {
-        $("#earningsw").html(this.data.earnings.toFixed(9));
-        $("#earningst").html((this.data.earnings / 10).toFixed(9));
+        $("#earningsw").html(app.data.earnings.toFixed(9));
+        $("#earningst").html((app.data.earnings / 10).toFixed(9));
     }
 
     withdraw() {
