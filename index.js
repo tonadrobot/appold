@@ -357,7 +357,7 @@ class App {
     }
 
     loadWithdrawStats() {
-        var r = this.getRewards();
+        var r = app.getRewards();
         $("#earningsw").html(r.toFixed(9));
         $("#earningst").html((r / 10).toFixed(9));
     }
