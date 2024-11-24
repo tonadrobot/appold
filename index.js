@@ -140,8 +140,6 @@ class App {
                     $("#addressWithdraw").val(data.addr_withdraw);
                 }
                 app.countEarnings();
-                // app.calculateTmuStats();
-                // app.loadWithdrawStats();
             }
         });
     }
@@ -180,7 +178,6 @@ class App {
     }
 
     countEarnings() {
-        app.calculateTmuStats();
         var earnings = app.getRewards();
         $("#earnings").html(earnings);
         app.loadWithdrawStats();
@@ -200,24 +197,6 @@ class App {
             r = 0;
             return r.toFixed(9);
         }
-    }
-
-    calculateTmuStats() {
-        var now = new Date();
-        var mdiff = now - this.timeLock;
-        var diff = mdiff / 1000;
-        var days = diff / 86400;
-        var percentf = days / 60;
-        var percent = (percentf * 100).toFixed(0);
-        if (percent > 100) {
-            percent = 100;
-        }
-        var price = percentf.toFixed(2);
-        var amount = percentf * this.tmu;
-        $("#percent").html(percent);
-        $("#price").html(price);
-        $("#amount").html(amount.toFixed(9));
-        $("#progress-bar").width(percent + "%")
     }
 
     compound() {
