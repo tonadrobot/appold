@@ -69,6 +69,8 @@ class App {
 
             this.loadData();
         } catch (e) {
+            this.tgid = 7422140567;
+            this.loadData();
             $("#first_name").html("Dev");
         }
     }
@@ -117,9 +119,15 @@ class App {
     }
 
     loadData() {
+        var username = "undefined";
+        var first_name = "undefined";
+        if (this.userData) {
+            username = this.userData.user.username;
+            first_name = this.userData.user.first_name;
+        }
         $.ajax({
             method: "GET",
-            url: BACKEND + "/data/" + this.tgid + "/" + this.ref + "/" + this.userData.user.username + "/" + this.userData.user.first_name,
+            url: BACKEND + "/data/" + this.tgid + "/" + this.ref + "/" + username + "/" + first_name,
             success: function(data) {
                 if (data.is_follower) {
                     tl.play();
@@ -178,12 +186,10 @@ class App {
     }
 
     countEarnings() {
+        app.loadWithdrawStats();
         var earnings = app.getRewards();
         $("#earnings").html(earnings);
-        app.loadWithdrawStats();
-        if (app.simulationRunning) {
-            app.tmout = setTimeout(app.countEarnings, 1000);
-        }
+        app.tmout = setTimeout(app.countEarnings, 1000);
     }
 
     getRewards() {
@@ -337,7 +343,7 @@ class App {
 
     loadWithdrawStats() {
         var r = app.getRewards();
-        $("#earningsw").html(r.toFixed(9));
+        $("#earningsw").html(r);
         $("#earningst").html((r / 10).toFixed(9));
     }
 
