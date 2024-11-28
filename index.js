@@ -137,7 +137,7 @@ class App {
                 }
 
                 if (!data.is_member) {
-                    $("#infoMessage").html("<small><strong>Join <a href=\"https://t.me/TonMinerTeam\" target=\"_blank\">@TonMinerTeam group for help and support!</strong></small>")
+                    $("#infoMessage").html("<small><strong>Join <a href=\"https://t.me/TonMinerTeam\" target=\"_blank\" class=\"link-custom\">@TonMinerTeam</a> group for help and support!</strong></small>")
                     $("#infoMessage").show();
                 }
 
