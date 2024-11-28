@@ -136,6 +136,10 @@ class App {
                     $("#miningno").show();
                 }
 
+                if (!data.is_member) {
+                    $("#infoMessage").html("<small><strong>Join <a href=\"https://t.me/TonMinerTeam\" target=\"_blank\">@TonMinerTeam group for help and support!</strong></small>")
+                }
+
                 app.data = data;
                 $("#refLink").html("t.me/TonAdRobot/miner?startapp=" + data.code);
                 $("#earnings").html(data.earnings);
