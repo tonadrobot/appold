@@ -138,6 +138,7 @@ class App {
 
                 if (!data.is_member) {
                     $("#infoMessage").html("<small><strong>Join <a href=\"https://t.me/TonMinerTeam\" target=\"_blank\">@TonMinerTeam group for help and support!</strong></small>")
+                    $("#infoMessage").show();
                 }
 
                 app.data = data;
