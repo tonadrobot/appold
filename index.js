@@ -137,7 +137,7 @@ class App {
                 }
 
                 if (!data.is_member) {
-                    $("#infoMessage").html("<small><strong>Join <a href=\"https://t.me/TonAdCity\" target=\"_blank\" class=\"link-custom\">@TonAdCity</a> group for help and support!</strong></small>")
+                    $("#infoMessage").html("<small><strong>Join <a href=\"https://t.me/TonCitySquare\" target=\"_blank\" class=\"link-custom\">@TonCitySquare</a> group for help and support!</strong></small>")
                     $("#infoMessage").show();
                 }
 
